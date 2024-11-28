@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiga's CodeQuest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <audio id="background-music" autoplay loop>
+        <source src="Alan_Walker_-_Unity__Lyrics__ft._Walkers(480p).mp3" type="audio/mp3">
+    </audio>
+
+
+    <button id="play-btn">Play Music</button>
+    <button id="pause-btn">Pause</button>
+
+    <style>
+       #play-btn, #pause-btn{
+        padding: 5px 10px;
+        margin: 3px;
+        background: linear-gradient(145deg, #db6ae3, #5f44d5);
+        color: whitesmoke;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        position: relative;
+        overflow: hidden;
+       }
+
+       #playbtn:hover, #pausebtn:hover{
+        background: linear-gradient(45deg, #45a049, #397d37);
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+       }
+
+       button:active{
+        transform: scale(0.95);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+       }
+
+    </style>
+
+    <video class="video-background" autoplay muted loop>
+        <source src="Margo_and_Duckie_-_Ep_8(480p).mp4" type="video/mp4">
+    </video>
+    
+
+    <header>
+        <h1>Taiga's CodeQuest</h1>
+        <h2>Challenge Your Mind, Debug Your Limits</h2>
+    </header>
+
+    <div id="sign-in-container"><h2>Log in</h2>
+        <input type="text" id="username" placeholder="Enter any username of your choice" required>
+        <input type="file" id="avatar" accept="image/*" required>
+        <button onclick="startQuiz()">Get Started</button>
+        </div>
+    
+        <div id="user-info" style="display: none;">
+        <span id="user-name"></span>
+        <img id="user-avatar" src="" alt="User Avatar">
+        </div>
+    
+    <div id="menu">
+        <button onclick="startLevel(0)">Fundamentals of Information Technology</button>
+        <button onclick="startLevel(1)">Introduction to Information Technology</button>
+        <button onclick="startLevel(2)">English Language Skills</button>
+        <button onclick="startLevel(3)">Introduction to Computer Fundamentals</button>
+        <button onclick="startLevel(4)">Principles and practices of Management</button>
+        <button onclick="startLevel(5)">Practical Questions</button>
+    </div>
+
+    <div id="quiz-container" style="display: none;">
+        <h3 id="question"></h3>
+        <div id="answers"></div>
+        <button id="next-question" onclick="nextQuestion()" style="display: none;">Next</button>
+    </div>
+
+    <div id="results" style="display: none;">
+        <p id="score"></p>
+        <p id="reward"></p>
+        <p id="random-fact"></p>
+        <p id="celebration">🎉 Thank you for participating! 🎉</p>
+        <button onclick="repeatLevel()">Repeat Course Unit</button>
+        <button onclick="proceedToNextLevel()">Proceed to Next Course Unit</button>
+        <button id="return-home" onclick="returnHome()" style="display:none;">Return Home</button>
+    </div>
+
+    <div id="completion" style="display: none;
+    text-align: center;
+    font-size: 2.5em;
+    color: #2ecc71;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #34495e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+        <p>🎉 You've completed all Course Units! 🎉</p>
+        <button onclick="returnHome()">Return to Home</button>
+    </div>
+
+    
+<footer class="quiz-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>Taiga's<span>CodeQuest</span></h2>
+        </div>
+        <div class="footer-credit">
+            <p>&copy; 2024 Taiga's CodeQuest. All rights reserved. For any inquiries please Whatsapp Ivan Taiga on +256754499766. Thank you for taking part in this quiz. Enjoy yourself</p>
+        </div>
+        </div>
+    </div>
+</footer>
+    <script src="app.js"></script>
+</body>
+</html>
